@@ -14,6 +14,7 @@
 		8D0FB5FA1FCE9D7F00A24F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0FB5F81FCE9D7F00A24F2A /* LaunchScreen.storyboard */; };
 		8D0FB6051FCE9D7F00A24F2A /* MVVMBinding_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB6041FCE9D7F00A24F2A /* MVVMBinding_ExampleTests.swift */; };
 		8D0FB6101FCE9D7F00A24F2A /* MVVMBinding_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB60F1FCE9D7F00A24F2A /* MVVMBinding_ExampleUITests.swift */; };
+		8D698E771FD139790016D70E /* SynchronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D698E761FD139790016D70E /* SynchronizedArray.swift */; };
 		8DBD462C1FCE9E8600C56A45 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD462B1FCE9E8600C56A45 /* ViewModel.swift */; };
 		8DBD46301FCFCFB600C56A45 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD462F1FCFCFB600C56A45 /* ViewModelState.swift */; };
 		8DBD46321FCFD75F00C56A45 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD46311FCFD75F00C56A45 /* ViewModelTests.swift */; };
@@ -51,6 +52,7 @@
 		8D0FB60B1FCE9D7F00A24F2A /* MVVMBinding ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVMBinding ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0FB60F1FCE9D7F00A24F2A /* MVVMBinding_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMBinding_ExampleUITests.swift; sourceTree = "<group>"; };
 		8D0FB6111FCE9D7F00A24F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D698E761FD139790016D70E /* SynchronizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedArray.swift; sourceTree = "<group>"; };
 		8DBD462B1FCE9E8600C56A45 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8DBD462F1FCFCFB600C56A45 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 		8DBD46311FCFD75F00C56A45 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				8DBD462B1FCE9E8600C56A45 /* ViewModel.swift */,
 				8DBD462F1FCFCFB600C56A45 /* ViewModelState.swift */,
 				8DBD46331FD0F5B000C56A45 /* Observable.swift */,
+				8D698E761FD139790016D70E /* SynchronizedArray.swift */,
 			);
 			path = "MVVMBinding Example";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DBD46301FCFCFB600C56A45 /* ViewModelState.swift in Sources */,
+				8D698E771FD139790016D70E /* SynchronizedArray.swift in Sources */,
 				8DBD46341FD0F5B000C56A45 /* Observable.swift in Sources */,
 				8DBD462C1FCE9E8600C56A45 /* ViewModel.swift in Sources */,
 				8D0FB5F21FCE9D7F00A24F2A /* ViewController.swift in Sources */,
