@@ -9,30 +9,30 @@
 import Foundation
 
 class Observable<T> {
-    typealias Listener = (T) -> Void
-    var listener: Listener?
+    typealias ObservableListener = (T) -> Void
+    private var listeners: [AnyHashable: ObservableListener] = [:]
     
-    func bind(listener: Listener?) {
-        self.listener = listener
-    }
-    
-    func bindAndFire(listener: Listener?) {
-        print("bindAndFire")
-        self.listener = listener
-        listener?(value)
-    }
-    
-    func unbind() {
-        self.listener = nil
-    }
-    
-    var value: T {
-        didSet {
+    func bind(for context: AnyHashable, initialFire: Bool = false, with listener: ObservableListener?) {
+        self.listeners[context] = listener
+        if initialFire {
             listener?(value)
         }
     }
     
-    init(_ v: T) {
-        value = v
+    func unbind(for context: AnyHashable) {
+        self.listeners.removeValue(forKey: context)
+    }
+    
+    var value: T {
+        didSet {
+            // TODO @ivanfoong: not to fire listener if value did not change
+            self.listeners.values.forEach { listener in
+                listener(value)
+            }
+        }
+    }
+    
+    init(_ value: T) {
+        self.value = value
     }
 }

@@ -33,12 +33,12 @@ class ViewModelTests: XCTestCase {
         let textFieldTextUpdateClosureCalledExpectation = self.expectation(description: "textFieldTextUpdateClosureCalledExpectation")
         let buttonTextUpdateClosureCalledExpectation = self.expectation(description: "buttonTextUpdateClosureCalledExpectation")
         
-        viewModel.textFieldText.bindAndFire { text in
+        viewModel.textFieldText.bind(for: self, initialFire: true) { text in
             actualTextFieldText = text
             textFieldTextUpdateClosureCalledExpectation.fulfill()
         }
         
-        viewModel.buttonText.bindAndFire { text in
+        viewModel.buttonText.bind(for: self, initialFire: true) { text in
             actualButtonText = text
             buttonTextUpdateClosureCalledExpectation.fulfill()
         }
@@ -61,12 +61,12 @@ class ViewModelTests: XCTestCase {
         let textFieldTextUpdateClosureCalledExpectation = self.expectation(description: "textFieldTextUpdateClosureCalledExpectation")
         let buttonTextUpdateClosureCalledExpectation = self.expectation(description: "buttonTextUpdateClosureCalledExpectation")
         
-        viewModel.textFieldText.bindAndFire { text in
+        viewModel.textFieldText.bind(for: self, initialFire: true) { text in
             actualTextFieldText = text
             textFieldTextUpdateClosureCalledExpectation.fulfill()
         }
         
-        viewModel.buttonText.bindAndFire { text in
+        viewModel.buttonText.bind(for: self, initialFire: true) { text in
             actualButtonText = text
             buttonTextUpdateClosureCalledExpectation.fulfill()
         }
@@ -100,7 +100,7 @@ class ViewModelTests: XCTestCase {
         let textFieldTextUpdateClosureCalledWithCorrectValueExpectation = self.expectation(description: "textFieldTextUpdateClosureCalledWithExpectedResponse")
         let buttonTextUpdateClosureCalledWithCorrectValueExpectation = self.expectation(description: "buttonTextUpdateClosureCalledWithCorrectValueExpectation")
         
-        viewModel.textFieldText.bindAndFire { text in
+        viewModel.textFieldText.bind(for: self, initialFire: true) { text in
             if actualTextFieldTextSequence.count == 0 {
                 actualTextFieldTextSequence.append(text)
             }
@@ -112,7 +112,7 @@ class ViewModelTests: XCTestCase {
             }
         }
         
-        viewModel.buttonText.bindAndFire { text in
+        viewModel.buttonText.bind(for: self, initialFire: true) { text in
             if actualButtonTextSequence.count == 0 {
                 actualButtonTextSequence.append(text)
             }
@@ -152,7 +152,7 @@ class ViewModelTests: XCTestCase {
         let textFieldTextUpdateClosureCalledWithCorrectValueExpectation = self.expectation(description: "textFieldTextUpdateClosureCalledWithExpectedResponse")
         let buttonTextUpdateClosureCalledWithCorrectValueExpectation = self.expectation(description: "buttonTextUpdateClosureCalledWithCorrectValueExpectation")
         
-        viewModel.textFieldText.bindAndFire { text in
+        viewModel.textFieldText.bind(for: self, initialFire: true) { text in
             if actualTextFieldTextSequence.count == 0 {
                 actualTextFieldTextSequence.append(text)
             }
@@ -164,7 +164,7 @@ class ViewModelTests: XCTestCase {
             }
         }
         
-        viewModel.buttonText.bindAndFire { text in
+        viewModel.buttonText.bind(for: self, initialFire: true) { text in
             if actualButtonTextSequence.count == 0 {
                 actualButtonTextSequence.append(text)
             }
@@ -182,59 +182,7 @@ class ViewModelTests: XCTestCase {
     }
     
     func testStop() {
-        let expectedInitialSeconds = 2
-        let expectedTextFieldTextSequence: [String] = [String(2), String(1), String(2)]
-        let expectedButtonTextSequence: [String] = [
-            "Start", "Pause", "Start"
-        ]
-        
-        var actualTextFieldTextSequence: [String] = []
-        var actualButtonTextSequence: [String] = []
-        
-        let viewModel = ViewModel(initialSecondsRemaining: expectedInitialSeconds)
-        
-        let textFieldTextUpdateClosureCalledWithCorrectValueExpectation = self.expectation(description: "textFieldTextUpdateClosureCalledWithExpectedResponse")
-        let buttonTextUpdateClosureCalledWithCorrectValueExpectation = self.expectation(description: "buttonTextUpdateClosureCalledWithCorrectValueExpectation")
-        
-        viewModel.textFieldText.bindAndFire { text in
-//            guard let text = text else {
-//                return
-//            }
-//            print(actualTextFieldTextSequence)
-//            if actualTextFieldTextSequence.count == 0 {
-//                actualTextFieldTextSequence.append(text)
-//            }
-//            else if let last = actualTextFieldTextSequence.last, last != text {
-//                actualTextFieldTextSequence.append(text)
-//            }
-//            if text == String(1) {
-//                viewModel.stop()
-//            }
-//            if expectedTextFieldTextSequence == actualTextFieldTextSequence {
-//                viewModel.textFieldText.unbind()
-//                textFieldTextUpdateClosureCalledWithCorrectValueExpectation.fulfill()
-//            }
-        }
-        
-        viewModel.buttonText.bindAndFire { text in
-//            guard let text = text else {
-//                return
-//            }
-//            if actualButtonTextSequence.count == 0 {
-//                actualButtonTextSequence.append(text)
-//            }
-//            else if let last = actualButtonTextSequence.last, last != text {
-//                actualButtonTextSequence.append(text)
-//            }
-//            if expectedButtonTextSequence == actualButtonTextSequence {
-//                viewModel.buttonText.unbind()
-//                buttonTextUpdateClosureCalledWithCorrectValueExpectation.fulfill()
-//            }
-        }
-        
-        viewModel.start()
-        
-        self.wait(for: [textFieldTextUpdateClosureCalledWithCorrectValueExpectation, buttonTextUpdateClosureCalledWithCorrectValueExpectation], timeout: 20)
+        XCTFail("Not implemented")
     }
     
     func testPause() {

@@ -71,10 +71,10 @@ class ViewController: UIViewController {
     }
     
     private func bindUI() {
-        self.viewModel.buttonText.bindAndFire { text in
+        self.viewModel.buttonText.bind(for: self, initialFire: true) { text in
             self.button.setTitle(text, for: .normal)
         }
-        self.viewModel.textFieldText.bindAndFire { text in
+        self.viewModel.textFieldText.bind(for: self, initialFire: true) { text in
             self.textField.text = text
         }
     }
